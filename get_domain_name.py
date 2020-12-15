@@ -43,7 +43,7 @@ def number2words(number):
     length = len(read)
 
     if number == 0:
-        return str("")
+        return 'zero'
     
     if length == 1:
         return one(number)
@@ -72,9 +72,7 @@ def number2words(number):
             return part1+ ' thousand'
         return part1 + ' thousand ' + part2
     
-##        return one(int(read[0])) + ' thousand ' + number2words(int(read.replace(read[0], '', 1)))
-    
-    elif 4 <= length < 6 :
+    elif 4 <= length <= 6 :
         #divide into two
         part1 = number2words( int( read[:7-len(read)] ) )
         part2 = number2words( int( read[7-len(read):] ) )
